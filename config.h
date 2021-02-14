@@ -26,9 +26,11 @@ static const char *colors[][3]      = {
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
-static const char *nextsong[]     = { "/usr/bin/playerctl", "next", NULL};
-static const char *presong[] = { "/usr/bin/playerctl", "previous", NULL};
-static const char *playpause[]    = { "/usr/bin/playerctl", "play-pause", NULL}; 
+
+/* Spotify and mpv */
+static const char *nextsong[]     = { "/usr/bin/playerctl", "--player=mpv,spotify", "next", NULL};
+static const char *presong[] = { "/usr/bin/playerctl","--player=mpv,spotify", "previous", NULL};
+static const char *playpause[]    = { "/usr/bin/playerctl", "--player=mpv,spotify", "play-pause", NULL}; 
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
