@@ -30,7 +30,7 @@ static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "@DEFAULT_SI
 /* Spotify and mpv */
 static const char *nextsong[]     = { "/usr/bin/playerctl", "--player=mpv,spotify", "next", NULL};
 static const char *presong[] = { "/usr/bin/playerctl","--player=mpv,spotify", "previous", NULL};
-static const char *playpause[]    = { "/usr/bin/playerctl", "--player=mpv,spotify", "play-pause", NULL}; 
+static const char *playpause[]    = { "/usr/bin/playerctl", "--player=mpv,spotify", "play-pause", NULL};
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -58,7 +58,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -104,7 +104,7 @@ static Key keys[] = {
 	{ MODKEY,                       XF86XK_AudioMute, spawn, {.v = playpause } },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
 	{ MODKEY,		        XF86XK_AudioRaiseVolume, spawn, {.v = nextsong } },
-	{ MODKEY,		        XF86XK_AudioLowerVolume, spawn, {.v = presong} }, 			        		
+	{ MODKEY,		        XF86XK_AudioLowerVolume, spawn, {.v = presong} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -133,4 +133,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
